@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cinza-escuro: #0d0d0d;
+  --dourado: #d4af37;
+}
+
+body {
+  background-color: var(--cinza-escuro);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid white;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.box-da-logo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nome-da-empresa {
+  color: var(--dourado);
+  display: none;
+}
+
+.menu-navegacao-disabled {
+  display: none;
+}
+
+/* HERO SECTION */
+
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: white;
+  min-height: 85vh;
+}
+
+.box-conteudo-textos-hero > h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.box-conteudo-textos-hero > p {
+  font-size: 1.2rem;
+}
+
+.box-conteudo-textos-hero > a {
+  display: block;
+  width: fit-content;
+  margin-top: 24px;
+  padding: 12px 24px;
+  background-color: var(--dourado);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.box-conteudo-textos-hero > a:hover {
+  background-color: #bfa130;
+}
+
+.hero-image {
+  width: 100vw;
+  height: 85vh;
+  max-height: 600px;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.hero-image-mobile {
+  display: block;
+}
+
+.hero-image-desktop {
+  display: none;
+}
+
+/* RESPONSIVIDADE */
+
+@media (min-width: 601px) {
+  .hero-image-mobile {
+    display: none;
+  }
+
+  .hero-image-desktop {
+    display: block;
+  }
+}
+
+.box-conteudo-textos-hero {
+  position: absolute;
+  text-align: start;
+  bottom: 10%;
+  left: 2vw;
+  margin-left: 5vw;
+}
+
+@media (min-width: 768px) {
+  .nome-da-empresa {
+    display: block;
+  }
+}

@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joalheria Local</title>
-</head>
-<body>
-        
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joalheria Lumière</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <button class="btn-menu" onclick="mostrarMenu()">
+        <img src="imagens/icons/icon-menu.png" alt="Menu" width="30" />
+      </button>
+      <nav class="menu-navegacao-disabled">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#destaques">Nossos Destaques</a></li>
+          <li><a href="#Categorias">Categorias</a></li>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="box-da-logo">
+        <img src="imagens/icons/icon-diamante.png" alt="Logo" width="30" />
+        <h1 class="nome-da-empresa">Joalheria Lumière</h1>
+      </div>
+      <img src="imagens/icons/icon-carrinho.png" alt="Carrinho" width="30" />
+    </header>
+
+    <section class="hero-section">
+      <div class="coteudo-hero">
+        <picture>
+          <img
+            srcset="imagens/imagens-principais/imagem-hero-mobile.jpg"
+            alt="Imagem de jóias"
+            class="hero-image hero-image-mobile"
+          />
+          <img
+            src="imagens/imagens-principais/imagem-hero.jpg"
+            alt="Imagem de jóias"
+            class="hero-image hero-image-desktop"
+          />
+        </picture>
+        <div class="box-conteudo-textos-hero">
+          <h2>Brilhe com Elegância</h2>
+          <p>Descubra nossas joias exclusivas e sofisticadas.</p>
+          <a href="#destaques" class="btn-explore">Explore Agora</a>
+        </div>
+      </div>
+    </section>
+
+    <script src="javascript/main.js"></script>
+  </body>
 </html>
