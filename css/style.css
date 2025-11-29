@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -7,12 +11,16 @@
 :root {
   --cinza-escuro: #0d0d0d;
   --dourado: #d4af37;
+  --cinza-claro: #f3f3f3;
+
+  --fonte-elegante: "Playfair Display", serif;
+  --fonte-simples: 'Lato', sans-serif;
 }
 
 body {
   background-color: var(--cinza-escuro);
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: var(--fonte-simples);
 }
 
 a {
@@ -30,6 +38,10 @@ header {
   align-items: center;
   padding: 20px;
   border-bottom: 1px solid white;
+  position: sticky;
+  top: 0;
+  background-color: var(--cinza-escuro);
+  z-index: 1000;
 }
 
 button {
@@ -65,6 +77,7 @@ button {
 .box-conteudo-textos-hero > h2 {
   font-size: 2rem;
   margin-bottom: 24px;
+  font-family: var(--fonte-elegante);
 }
 
 .box-conteudo-textos-hero > p {
@@ -76,15 +89,17 @@ button {
   width: fit-content;
   margin-top: 24px;
   padding: 12px 24px;
-  background-color: var(--dourado);
-  color: white;
+  background-color: white;
+  color: var(--cinza-escuro);
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .box-conteudo-textos-hero > a:hover {
-  background-color: #bfa130;
+  background-color: var(--dourado);
 }
 
 .hero-image {
@@ -92,7 +107,7 @@ button {
   height: 85vh;
   max-height: 600px;
   object-fit: cover;
-  filter: brightness(70%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 }
 
 .hero-image-mobile {
@@ -101,6 +116,102 @@ button {
 
 .hero-image-desktop {
   display: none;
+}
+
+/* NOSSOS DESTQUES */
+
+#destaques-section {
+  padding: 24px 20px;
+  text-align: start;
+  background-color: white;
+}
+
+.grid-destaques {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2px;
+  column-gap: 4px;
+  justify-content: space-between;
+}
+
+.link-produto {
+  display: block;
+  width: 49%;
+}
+
+.card-produto {
+  background-color: var(--cinza-claro);
+  margin-bottom: 24px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-produto:hover {
+  transform: scale(1.01);
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.192);
+}
+
+.card-produto > img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.titulo-secao {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: var(--cinza-escuro);
+}
+
+.box-desc-produto {
+  padding: 0 12px 12px 12px;
+  text-align: center;
+}
+
+.descricao-produto {
+  font-size: 0.7rem;
+  margin-bottom: 16px;
+  color: var(--cinza-escuro);
+  opacity: 0.8;
+}
+
+.precos-do-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preco-riscado-produto {
+  color: var(--cinza-escuro);
+  font-size: 0.7rem;
+  text-decoration: line-through;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.preco-produto {
+  color: var(--cinza-escuro);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.preco-parcelado-produto {
+  color: var(--cinza-escuro);
+  font-size: 0.7rem;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.btn-comprar-produto {
+  display: block;
+  width: fit-content;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: white;
+  color: var(--cinza-escuro);
+  border: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+  border: solid 1px var(--cinza-escuro);
 }
 
 /* RESPONSIVIDADE */
