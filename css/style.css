@@ -33,6 +33,10 @@ li {
   list-style: none;
 }
 
+h2 {
+  font-family: var(--fonte-elegante);
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -76,13 +80,15 @@ button {
 }
 
 .box-conteudo-textos-hero > h2 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-bottom: 24px;
   font-family: var(--fonte-elegante);
+  margin-right: 20%;
 }
 
 .box-conteudo-textos-hero > p {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  margin-right: 30%;
 }
 
 .box-conteudo-textos-hero > a {
@@ -160,7 +166,7 @@ button {
 
 .titulo-secao {
   font-size: 1.5rem;
-  margin-bottom: 16px;
+  padding: 0 0 24px 0;
   color: var(--cinza-escuro);
 }
 
@@ -219,7 +225,7 @@ button {
 .btn-ver-catalogo {
   display: block;
   width: fit-content;
-  margin: 0 auto 24px auto;
+  margin: 0 auto 16px auto;
   padding: 12px 24px;
   background-color: var(--cinza-escuro);
   color: white;
@@ -237,12 +243,11 @@ button {
 /* CATEGORIAS */
 
 .categorias {
-  padding: 0 0 24px 20px;
+  padding: 0 0 32px 20px;
 }
 
 .titulo-secao-categorias {
-  margin-bottom: 1.5rem;
-  padding: 16px 0 0 0; /* Para alinhar com o conteúdo */
+  padding: 24px 0; /* Para alinhar com o conteúdo */
   color: white;
 }
 
