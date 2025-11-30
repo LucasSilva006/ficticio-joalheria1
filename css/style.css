@@ -23,6 +23,7 @@ body {
   font-family: var(--fonte-simples);
   font-weight: 300;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 a {
@@ -185,7 +186,7 @@ button {
 }
 
 .hero-image {
-  width: 100vw;
+  width: 100%;
   height: 85vh;
   max-height: 600px;
   object-fit: cover;
@@ -582,6 +583,20 @@ footer {
 
   .box-conteudo-textos-hero > a {
     font-size: 1.2rem;
+  }
+
+  /* DESTAQUES */
+
+  .preco-riscado-produto {
+    font-size: 0.8rem;
+  }
+
+  .preco-produto {
+    font-size: 1.2rem;
+  }
+
+  .preco-parcelado-produto {
+    font-size: 1rem;
   }
 
   #destaques {
