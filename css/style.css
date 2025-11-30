@@ -200,7 +200,7 @@ button {
   display: none;
 }
 
-/* NOSSOS DESTQUES */
+/* NOSSOS DESTAQUES */
 
 #destaques {
   padding: 24px 20px;
@@ -214,7 +214,7 @@ button {
   flex-wrap: wrap;
   row-gap: 2px;
   column-gap: 4px;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .link-produto {
@@ -523,5 +523,134 @@ footer {
 @media (min-width: 768px) {
   .nome-da-empresa {
     display: block;
+  }
+
+  /*HERO - 768PX*/
+
+  .box-conteudo-textos-hero {
+    left: 5vw;
+  }
+
+  #destaques {
+    padding: 24px 10vw;
+  }
+
+  .link-produto {
+    width: 30%;
+  }
+
+  /*CATEGORIAS - 768PX*/
+
+  .categorias {
+    padding: 0 10vw 32px 10vw;
+  }
+
+  /* SOBRE - 768PX*/
+
+  .sobre {
+    padding: 24px 10vw;
+  }
+
+  /* FOOTER - 768PX*/
+
+  footer {
+    padding: 24px 10vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nome-da-empresa {
+    display: block;
+  }
+
+  /*HERO - 1024PX*/
+
+  .box-conteudo-textos-hero {
+    left: 5vw;
+  }
+  .box-conteudo-textos-hero > h2 {
+    font-size: 3rem;
+    margin-bottom: 24px;
+    font-family: var(--fonte-elegante);
+    margin-right: 10%;
+  }
+
+  .box-conteudo-textos-hero > p {
+    font-size: 1.5rem;
+    margin-right: 10%;
+  }
+
+  .box-conteudo-textos-hero > a {
+    font-size: 1.2rem;
+  }
+
+  #destaques {
+    padding: 24px 10vw;
+    scroll-margin-top: 60px;
+  }
+
+  .link-produto {
+    width: calc(25% - 3.2px);
+  }
+
+  /*CATEGORIAS - 1024PX*/
+
+  .categorias {
+    padding: 0 10vw 32px 10vw;
+    scroll-margin-top: 60px;
+  }
+
+  /* SOBRE - 1024PX*/
+
+  .sobre {
+    padding: 24px 10vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    grid-column-gap: 48px;
+    grid-row-gap: 16px;
+    scroll-margin-top: 60px;
+  }
+
+  .conteudo-sobre {
+    grid-area: 1 / 1 / 2 / 2;
+    margin-top: 80px;
+  }
+  .imagem-sobre {
+    grid-area: 1 / 2 / 2 / 4;
+    width: 55vw;
+  }
+  .missao {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .visoa {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .valores {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+
+  /* FOOTER - 1024PX*/
+
+  footer {
+    padding: 24px 5vw;
+  }
+
+  .box-do-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 0px;
+  }
+
+  .logo-final {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .links-rapidos {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .contato {
+    grid-area: 1 / 3 / 2 / 4;
   }
 }
