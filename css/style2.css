@@ -6,3 +6,35 @@
 .titulo-secao {
     margin: 8px auto;
 }
+
+.filtro-categorias-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0 32px 0;
+}
+
+.filtro-categorias-container label {
+    font-weight: bold;
+    color: black;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+#filtro-categoria {
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 1px solid black;
+    background: #cccccc;
+    color: black;
+    font-size: 1rem;
+    font-family: inherit;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: border 0.2s;
+}
+
+#filtro-categoria:focus {
+    border: 2px solid gray;
+    outline: none;
+}

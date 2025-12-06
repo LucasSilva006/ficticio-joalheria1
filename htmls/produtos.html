@@ -35,6 +35,19 @@
     <main>
       <section id="produtos" class="section-destaques">
         <h2 class="titulo-secao">Todos os Produtos</h2>
+        <div class="filtro-categorias-container">
+          <label for="filtro-categoria" style="font-weight: bold; margin-right: 8px;">Filtrar por categoria:</label>
+          <select id="filtro-categoria" style="padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc;">
+            <option value="todos">Todos</option>
+            <option value="Anel">Anéis</option>
+            <option value="Colar">Colares</option>
+            <option value="Brinco">Brincos</option>
+            <option value="Pulseira">Pulseiras</option>
+            <option value="Aliança">Alianças</option>
+            <option value="Pingente">Pingentes</option>
+            <option value="Tornozeleira">Tornozeleiras</option>
+          </select>
+        </div>
         <div class="grid-destaques" id="produtos-list"></div>
       </section>
     </main>
@@ -79,27 +92,44 @@
         document.querySelector('.menu-sidebar').classList.remove('menu-aberto');
         document.querySelector('.overlay-menu').classList.remove('overlay-visivel');
       }
-      // Renderizar produtos do JSON
+      // Renderizar produtos do JSON com filtro
+      let todosProdutos = [];
+      function renderProdutos(produtos) {
+        const container = document.getElementById('produtos-list');
+        container.innerHTML = produtos.map(prod => `
+          <a href="#" class="link-produto">
+            <div class="card-produto">
+              <img src="${prod.imagem}" alt="${prod.nome}" class="imagem-produto" />
+              <div class="box-desc-produto">
+                <p class="descricao-produto">${prod.descricao}</p>
+                <div class="precos-do-item">
+                  <span class="preco-riscado-produto">${prod.precoRiscado}</span>
+                  <span class="preco-produto">${prod.preco}</span>
+                  <span class="preco-parcelado-produto">${prod.precoParcelado}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        `).join('');
+      }
       fetch('produtos.json')
         .then(res => res.json())
         .then(produtos => {
-          const container = document.getElementById('produtos-list');
-          container.innerHTML = produtos.map(prod => `
-            <a href="#" class="link-produto">
-              <div class="card-produto">
-                <img src="${prod.imagem}" alt="${prod.nome}" class="imagem-produto" />
-                <div class="box-desc-produto">
-                  <p class="descricao-produto">${prod.descricao}</p>
-                  <div class="precos-do-item">
-                    <span class="preco-riscado-produto">${prod.precoRiscado}</span>
-                    <span class="preco-produto">${prod.preco}</span>
-                    <span class="preco-parcelado-produto">${prod.precoParcelado}</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          `).join('');
+          todosProdutos = produtos;
+          renderProdutos(produtos);
         });
+      document.getElementById('filtro-categoria').addEventListener('change', function() {
+        const valor = this.value;
+        if (valor === 'todos') {
+          renderProdutos(todosProdutos);
+        } else {
+          const filtrados = todosProdutos.filter(prod => {
+            // Busca por nome que começa com a categoria
+            return prod.nome.toLowerCase().includes(valor.toLowerCase());
+          });
+          renderProdutos(filtrados);
+        }
+      });
     </script>
 </body>
 </html>
