@@ -1,11 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Produtos | Joalheria Lumière</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style2.css">
 </head>
 <body>
-    
+    <header>
+      <button class="btn-menu" onclick="mostrarMenu()">
+        <img src="../imagens/icons/icon-menu.png" alt="Menu" width="30" />
+      </button>
+      <nav class="menu-sidebar">
+        <button class="btn-fechar-menu" onclick="fecharMenu()">
+          <img src="../imagens/icons/icon-seta-esquerda.png" alt="Voltar" width="30" />
+        </button>
+        <ul>
+          <li><a href="../index.html#inicio" onclick="fecharMenu()">Início</a></li>
+          <li><a href="../index.html#destaques" onclick="fecharMenu()">Nossos Destaques</a></li>
+          <li><a href="../index.html#categorias" onclick="fecharMenu()">Categorias</a></li>
+          <li><a href="../index.html#sobre" onclick="fecharMenu()">Sobre Nós</a></li>
+          <li><a href="../index.html#contato" onclick="fecharMenu()">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="overlay-menu" onclick="fecharMenu()"></div>
+      <div class="box-da-logo">
+        <img src="../imagens/icons/icon-diamante.png" alt="Logo" width="30" />
+        <h1 class="nome-da-empresa">Joalheria Lumière</h1>
+      </div>
+      <img src="../imagens/icons/icon-sacola-de-compra.png" alt="Sacola" width="30" />
+    </header>
+
+    <main>
+      <section id="produtos" class="section-destaques">
+        <h2 class="titulo-secao">Todos os Produtos</h2>
+        <div class="grid-destaques" id="produtos-list"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="box-do-footer">
+        <div class="logo-final">
+          <img src="../imagens/icons/icon-diamante.png" alt="Logo" width="30" />
+          <h1 class="nome-da-empresa-final">Joalheria Lumière</h1>
+          <h2 class="subtit-logo-final">Elegância que Ilumina</h2>
+        </div>
+        <div class="links-rapidos">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="../index.html#inicio">Início</a></li>
+            <li><a href="../index.html#destaques">Nossos Destaques</a></li>
+            <li><a href="../index.html#categorias">Categorias</a></li>
+            <li><a href="../index.html#sobre">Sobre Nós</a></li>
+            <li><a href="../index.html#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="contato" id="contato">
+          <h3>Contato</h3>
+          <p>Email: exemplodeemail@exemplo.com</p>
+          <p>Telefone: (11) 1234-5678</p>
+          <p>Endereço: Rua das Joias, 123 - Centro, Cidade, Estado</p>
+        </div>
+      </div>
+      <div class="copy-final">
+        <p>Desenvolvido por <a href="#">ClarTI</a></p>
+        <p>&copy; 2025 Joalheria Lumière. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Menu lateral
+      function mostrarMenu() {
+        document.querySelector('.menu-sidebar').classList.add('menu-aberto');
+        document.querySelector('.overlay-menu').classList.add('overlay-visivel');
+      }
+      function fecharMenu() {
+        document.querySelector('.menu-sidebar').classList.remove('menu-aberto');
+        document.querySelector('.overlay-menu').classList.remove('overlay-visivel');
+      }
+      // Renderizar produtos do JSON
+      fetch('produtos.json')
+        .then(res => res.json())
+        .then(produtos => {
+          const container = document.getElementById('produtos-list');
+          container.innerHTML = produtos.map(prod => `
+            <a href="#" class="link-produto">
+              <div class="card-produto">
+                <img src="${prod.imagem}" alt="${prod.nome}" class="imagem-produto" />
+                <div class="box-desc-produto">
+                  <p class="descricao-produto">${prod.descricao}</p>
+                  <div class="precos-do-item">
+                    <span class="preco-riscado-produto">${prod.precoRiscado}</span>
+                    <span class="preco-produto">${prod.preco}</span>
+                    <span class="preco-parcelado-produto">${prod.precoParcelado}</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          `).join('');
+        });
+    </script>
 </body>
 </html>
