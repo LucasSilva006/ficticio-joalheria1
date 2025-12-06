@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "nome": "Anel de Ouro",
     "descricao": "Um anel elegante feito de ouro 18 quilates, perfeito para qualquer ocasião.",
     "imagem": "../imagens/imagens-itens/anel-ouro1.png",
@@ -8,6 +9,7 @@
     "precoParcelado": "4x sem juros de R$ 300,00"
   },
   {
+    "id": 2,
     "nome": "Colar de Prata",
     "descricao": "Colar delicado em prata 925 com pingente de coração, ideal para presentear quem você ama.",
     "imagem": "../imagens/imagens-itens/colar-prata-pg-coracao.png",
@@ -16,6 +18,7 @@
     "precoParcelado": "3x sem juros de R$ 216,67"
   },
   {
+    "id": 3,
     "nome": "Brinco de Diamante",
     "descricao": "Par de brincos solitários em ouro branco com diamantes naturais de alta qualidade.",
     "imagem": "../imagens/imagens-itens/par-brinco-ourobranco-diamante.png",
@@ -24,6 +27,7 @@
     "precoParcelado": "6x sem juros de R$ 400,00"
   },
   {
+    "id": 4,
     "nome": "Pulseira Charm",
     "descricao": "Pulseira estilo charm em prata com berloques personalizáveis, perfeita para criar sua história.",
     "imagem": "../imagens/imagens-itens/pulseira-charm-prata-berloques.png",
@@ -32,6 +36,7 @@
     "precoParcelado": "3x sem juros de R$ 183,33"
   },
   {
+    "id": 5,
     "nome": "Aliança de Tungstênio",
     "descricao": "Aliança moderna em tungstênio com detalhes em carbono, resistente e sofisticada.",
     "imagem": "../imagens/imagens-itens/aliancas-tungstenio.png",
@@ -40,6 +45,7 @@
     "precoParcelado": "2x sem juros de R$ 160,00"
   },
   {
+    "id": 6,
     "nome": "Tornozeleira Folheada",
     "descricao": "Tornozeleira delicada folheada a ouro com pingentes de estrela, perfeita para o verão.",
     "imagem": "../imagens/imagens-itens/tornozeleira-folheada.png",
@@ -48,6 +54,7 @@
     "precoParcelado": "2x sem juros de R$ 90,00"
   },
   {
+    "id": 7,
     "nome": "Anel de Formatura",
     "descricao": "Anel de formatura personalizado em ouro com pedra natural, símbolo de conquista e dedicação.",
     "imagem": "../imagens/imagens-itens/anel-de-formatura.png",
@@ -56,6 +63,7 @@
     "precoParcelado": "5x sem juros de R$ 420,00"
   },
   {
+    "id": 8,
     "nome": "Pingente Cruz",
     "descricao": "Pingente de cruz em ouro amarelo com detalhes trabalhados, símbolo de fé e proteção.",
     "imagem": "../imagens/imagens-itens/pingente-cruz-ouro.png",
