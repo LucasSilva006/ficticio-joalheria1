@@ -15,24 +15,16 @@ function fecharMenu() {
 fetch("javascript/produtos.json")
   .then((res) => res.json())
   .then((produtos) => {
-    const lista = document.getElementById("lista-produtos"); // container no index.html
+    const lista = document.getElementById("lista-produtos");
 
     produtos.forEach((produto) => {
-      // Garante que o caminho da imagem funcione a partir do index (raiz)
-      const imgSrc =
-        produto.imagem && produto.imagem.startsWith("../")
-          ? produto.imagem.replace(/^\.\/\.\//, "") // remove "../" do começo
-          : produto.imagem;
+      // CORRIGIDO: Remove "../" do começo
+      const imgSrc = produto.imagem.replace(/^\.\.\//, "");
 
-      // Cria <a>
       const a = document.createElement("a");
       a.className = "link-produto";
-      a.href = `htmls/produto.html?id=${produto.id}`; // <-- link correto
+      a.href = `htmls/produto.html?id=${produto.id}`;
 
-      // Se você só quer o <a> vazio (sem conteúdo interno), basta append:
-      // lista.appendChild(a);
-
-      // Se quiser o card completo dentro do <a>, crie o HTML interno:
       a.innerHTML = `
         <div class="card-produto">
           <img src="${imgSrc}" alt="${produto.nome}" class="imagem-produto" />
