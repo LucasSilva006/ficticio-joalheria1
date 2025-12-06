@@ -1,168 +1,206 @@
-/* produto.css */
-body {
-  background: #fff;
-  color: #222;
-  font-family: "Playfair Display", serif;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-.header-produto {
-  background: #fff;
-  border-bottom: 2px solid #d4af37;
-  padding: 16px 0;
-  text-align: center;
+
+:root {
+  --cinza-escuro: #0d0d0d;
+  --dourado: #d4af37;
+  --cinza-claro: #f3f3f3;
+
+  --fonte-elegante: "Playfair Display", serif;
+  --fonte-simples: "Lato", sans-serif;
 }
-.logo-produto h1 {
-  color: #d4af37;
-  font-size: 2rem;
-  margin: 0;
-  font-family: "Playfair Display", serif;
-  letter-spacing: 2px;
+
+body {
+  background-color: var(--cinza-escuro);
+  color: white;
+  font-family: var(--fonte-simples);
+  overflow-x: hidden;
 }
+
+
+/* ===========================
+   PRODUTO DETALHE
+=========================== */
+
 .produto-detalhe {
-  max-width: 900px;
-  margin: 40px auto 24px auto;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(212, 175, 55, 0.08);
-  padding: 32px;
-  display: flex;
-  justify-content: center;
+  padding: 24px 20px;
 }
+
 .produto-box {
   display: flex;
-  gap: 32px;
-  align-items: flex-start;
-  width: 100%;
-}
-.produto-img {
-  width: 340px;
-  max-width: 100%;
-  border-radius: 12px;
-  border: 2px solid #d4af37;
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.1);
-  background: #faf8f2;
-}
-.produto-info {
-  flex: 1;
-  display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 24px;
+  background-color: var(--cinza-claro);
+  color: var(--cinza-escuro);
+  padding: 20px;
 }
-.produto-nome {
-  font-size: 2.2rem;
-  color: #d4af37;
-  margin: 0 0 8px 0;
-  font-family: "Playfair Display", serif;
+
+.produto-img {
+  width: 100%;
+  border-radius: 4px;
 }
+
+.produto-info h2 {
+  font-family: var(--fonte-elegante);
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
 .produto-preco {
-  font-size: 1.5rem;
-  color: #222;
+  display: block;
+  font-size: 1.4rem;
   font-weight: bold;
-  background: #fffbe6;
-  border-radius: 6px;
-  padding: 4px 12px;
-  border: 1px solid #d4af37;
-  display: inline-block;
+  color: var(--cinza-escuro);
+  margin-bottom: 12px;
 }
+
 .produto-descricao {
-  font-size: 1.1rem;
-  color: #444;
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 12px;
 }
+
 .produto-material {
   font-size: 1rem;
-  color: #888;
+  margin-bottom: 16px;
+  font-family: var(--fonte-elegante);
 }
+
+/* BOTÃO WHATSAPP */
 .btn-whatsapp {
-  background: #d4af37;
-  color: #fff;
+  display: block;
+  width: fit-content;
+  padding: 12px 20px;
+  background-color: var(--cinza-escuro);
+  color: white;
+  border: 1px solid var(--dourado);
   font-weight: bold;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 1.1rem;
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.1);
-  transition: background 0.2s;
-  margin-top: 12px;
-  display: inline-block;
+  transition: 0.3s ease-in-out;
 }
+
 .btn-whatsapp:hover {
-  background: #bfa233;
+  background-color: var(--dourado);
+  color: var(--cinza-escuro);
 }
-.produto-nao-encontrado {
-  color: #bfa233;
-  font-size: 1.5rem;
-  text-align: center;
-  padding: 48px 0;
-}
+
+/* ===========================
+   PRODUTOS RELACIONADOS
+=========================== */
+
 .produtos-relacionados {
-  max-width: 900px;
-  margin: 0 auto 40px auto;
-  padding: 0 32px;
+  padding: 24px 20px;
+  margin-top: 32px;
 }
+
 .produtos-relacionados h2 {
-  color: #d4af37;
-  font-size: 1.4rem;
-  margin-bottom: 18px;
-  font-family: "Playfair Display", serif;
+  font-family: var(--fonte-elegante);
+  color: white;
+  font-size: 1.6rem;
+  margin-bottom: 16px;
 }
+
 .relacionados-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
+
 .relacionado-card {
-  background: #fffbe6;
-  border: 1px solid #d4af37;
-  border-radius: 10px;
+  background-color: white;
+  color: var(--cinza-escuro);
   text-align: center;
-  text-decoration: none;
-  color: #222;
-  padding: 18px 8px;
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.07);
-  transition: box-shadow 0.2s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  padding-bottom: 12px;
+  transition: transform 0.3s ease-in-out;
 }
+
 .relacionado-card:hover {
-  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.18);
+  transform: scale(1.03);
 }
+
 .relacionado-card img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  border-radius: 6px;
-  margin-bottom: 6px;
-  background: #fff;
-  border: 1px solid #d4af37;
+  width: 100%;
+  height: auto;
 }
+
 .relacionado-preco {
-  color: #bfa233;
+  font-size: 0.9rem;
   font-weight: bold;
-  font-size: 1.1rem;
+  margin-top: 4px;
 }
-.footer-produto {
-  background: #fff;
-  border-top: 2px solid #d4af37;
-  text-align: center;
-  padding: 18px 0;
-  color: #bfa233;
-  font-family: "Playfair Display", serif;
+
+/* ===========================
+   PRODUTO NÃO ENCONTRADO
+=========================== */
+
+.produto-nao-encontrado {
+  padding: 24px 20px;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-left: 4px solid red;
   font-size: 1rem;
 }
-@media (max-width: 700px) {
-  .produto-detalhe {
-    padding: 12px;
-  }
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer-produto {
+  background: linear-gradient(to bottom, #181818, #000000);
+  padding: 24px 20px;
+  margin-top: 40px;
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+@media (min-width: 768px) {
   .produto-box {
-    flex-direction: column;
-    gap: 18px;
-    align-items: center;
+    flex-direction: row;
   }
+
   .produto-img {
-    width: 100%;
-    max-width: 320px;
+    width: 50%;
+    object-fit: cover;
+  }
+
+  .produto-info {
+    width: 50%;
+    padding-right: 20px;
+  }
+
+  .relacionados-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .produto-detalhe {
+    padding: 40px 10vw;
+  }
+
+  .produtos-relacionados {
+    padding: 24px 10vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .produto-box {
+    padding: 40px;
+  }
+
+  .produto-info h2 {
+    font-size: 2rem;
+  }
+
+  .produto-preco {
+    font-size: 1.6rem;
   }
 }

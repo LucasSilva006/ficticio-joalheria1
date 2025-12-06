@@ -4,15 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Produto | Joalheria Lumière</title>
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/produto.css" />
   </head>
   <body>
-    <header class="header-produto">
-      <div class="logo-produto">
-        <img src="../imagens/icons/icon-diamante.png" alt="Logo" width="32" />
-        <h1>Joalheria Lumière</h1>
+    <header>
+      <button class="btn-menu" onclick="mostrarMenu()">
+        <img src="../imagens/icons/icon-menu.png" alt="Menu" width="30" />
+      </button>
+
+      <nav class="menu-sidebar">
+        <button class="btn-fechar-menu" onclick="fecharMenu()">
+          <img
+            src="../imagens/icons/icon-seta-esquerda.png"
+            alt="Voltar"
+            width="30"
+          />
+        </button>
+
+        <ul>
+          <li>
+            <a href="../index.html#inicio" onclick="fecharMenu()">Início</a>
+          </li>
+          <li>
+            <a href="../index.html#destaques" onclick="fecharMenu()"
+              >Nossos Destaques</a
+            >
+          </li>
+          <li>
+            <a href="../index.html#categorias" onclick="fecharMenu()"
+              >Categorias</a
+            >
+          </li>
+          <li>
+            <a href="../index.html#sobre" onclick="fecharMenu()">Sobre Nós</a>
+          </li>
+          <li>
+            <a href="../index.html#contato" onclick="fecharMenu()">Contato</a>
+          </li>
+          <li><a href="produtos.html" onclick="fecharMenu()">Catálogo</a></li>
+        </ul>
+      </nav>
+
+      <div class="overlay-menu" onclick="fecharMenu()"></div>
+
+      <div class="box-da-logo">
+        <img src="../imagens/icons/icon-diamante.png" alt="Logo" width="30" />
+        <h1 class="nome-da-empresa">Joalheria Lumière</h1>
       </div>
+
+      <img
+        src="../imagens/icons/icon-sacola-de-compra.png"
+        alt="Sacola"
+        width="30"
+      />
     </header>
+
     <main>
       <section class="produto-detalhe" id="produto-detalhe"></section>
       <section class="produtos-relacionados" id="produtos-relacionados">
@@ -20,72 +67,39 @@
         <div class="relacionados-grid"></div>
       </section>
     </main>
-    <footer class="footer-produto">
-      <p>&copy; 2025 Joalheria Lumière. Todos os direitos reservados.</p>
-    </footer>
-    <script>
-      function getIdFromUrl() {
-        const params = new URLSearchParams(window.location.search);
-        return params.get("id");
-      }
-      function whatsappButton(produto) {
-        const msg = encodeURIComponent(
-          `Olá! Tenho interesse no produto "${produto.nome}".`
-        );
-        return `<a class="btn-whatsapp" href="https://wa.me/5511123456789?text=${msg}" target="_blank">Fale pelo WhatsApp</a>`;
-      }
-      function montarProduto(produto) {
-        return `
-        <div class="produto-box">
-          <img src="${produto.imagem}" alt="${
-          produto.nome
-        }" class="produto-img">
-          <div class="produto-info">
-            <h2 class="produto-nome">${produto.nome}</h2>
-            <span class="produto-preco">R$ ${produto.preco}</span>
-            <p class="produto-descricao">${produto.descricao}</p>
-            <p class="produto-material"><strong>Material:</strong> ${
-              produto.material
-            }</p>
-            ${whatsappButton(produto)}
-          </div>
+    <footer>
+      <div class="box-do-footer">
+        <div class="logo-final">
+          <img src="../imagens/icons/icon-diamante.png" alt="Logo" width="30" />
+          <h1 class="nome-da-empresa-final">Joalheria Lumière</h1>
+          <h2 class="subtit-logo-final">Elegância que Ilumina</h2>
         </div>
-      `;
-      }
-      function montarRelacionados(produtos, idAtual) {
-        const outros = produtos.filter((p) => String(p.id) !== String(idAtual));
-        const embaralhados = outros.sort(() => Math.random() - 0.5).slice(0, 4);
-        return embaralhados
-          .map(
-            (prod) => `
-        <a href="produto.html?id=${prod.id}" class="relacionado-card">
-          <img src="${prod.imagem}" alt="${prod.nome}">
-          <span>${prod.nome}</span>
-          <span class="relacionado-preco">R$ ${prod.preco}</span>
-        </a>
-      `
-          )
-          .join("");
-      }
-      const id = getIdFromUrl();
-      fetch("../javascript/produtos.json")
-        .then((res) => res.json())
-        .then((produtos) => {
-          const produto = produtos.find((p) => String(p.id) === String(id));
-          const detalhe = document.getElementById("produto-detalhe");
-          if (produto) {
-            detalhe.innerHTML = montarProduto(produto);
-            document.querySelector(".relacionados-grid").innerHTML =
-              montarRelacionados(produtos, produto.id);
-          } else {
-            detalhe.innerHTML = `<div class="produto-nao-encontrado">Produto não encontrado.</div>`;
-            document.querySelector(".relacionados-grid").innerHTML = "";
-          }
-        })
-        .catch(() => {
-          document.getElementById("produto-detalhe").innerHTML =
-            '<div class="produto-nao-encontrado">Erro ao carregar produtos.</div>';
-        });
-    </script>
+        <div class="links-rapidos">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../index.html#destaques">Nossos Destaques</a></li>
+            <li><a href="../index.html#categorias">Categorias</a></li>
+            <li><a href="../index.html#sobre">Sobre Nós</a></li>
+            <li><a href="../index.html#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="contato" id="contato">
+          <h3>Contato</h3>
+          <p>Email: exemplodeemail@exemplo.com</p>
+          <p>Telefone: (11) 1234-5678</p>
+          <p>Endereço: Rua das Joias, 123 - Centro, Cidade, Estado</p>
+        </div>
+      </div>
+
+      <div class="copy-final">
+        <p>
+          Desenvolvido por
+          <a href="https://www.instagram.com/clarti.dev/">ClarTI</a>
+        </p>
+        <p>&copy; 2025 Joalheria Lumière. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+    <script src="../javascript/script-produto.js"></script>
   </body>
 </html>

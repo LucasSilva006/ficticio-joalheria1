@@ -209,23 +209,34 @@ button {
   scroll-margin-top: 40px;
 }
 
-.grid-destaques {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 2px;
-  column-gap: 4px;
-  justify-content: center;
-  align-items: stretch;
+.titulo-secao {
+  font-size: 1.8rem;
+  padding: 0 0 16px 0;
+  color: var(--cinza-escuro);
 }
 
+/* REMOVER o .grid-destaques ou deixar apenas como wrapper simples */
+.grid-destaques {
+  width: 100%;
+}
+
+/* O #lista-produtos é o verdadeiro grid */
+#lista-produtos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas no mobile */
+  gap: 12px;
+  width: 100%;
+}
+
+/* REMOVER o width: 49% do link */
 .link-produto {
   display: block;
-  width: 49%;
+  width: 100%; /* Deixa o grid controlar o tamanho */
+  text-decoration: none;
 }
 
 .card-produto {
   background-color: var(--cinza-claro);
-  margin-bottom: 24px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   height: 100%;
   display: flex;
@@ -241,12 +252,6 @@ button {
   width: 100%;
   height: auto;
   margin-bottom: 16px;
-}
-
-.titulo-secao {
-  font-size: 1.8rem;
-  padding: 0 0 16px 0;
-  color: var(--cinza-escuro);
 }
 
 .box-desc-produto {
@@ -527,9 +532,8 @@ footer {
     padding: 24px 10vw;
   }
 
-  .grid-destaques {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  #lista-produtos {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
     gap: 16px;
   }
 
@@ -582,7 +586,22 @@ footer {
     font-size: 1.2rem;
   }
 
-  /* DESTAQUES */
+  /* DESTAQUES - 1024PX */
+
+  #destaques {
+    padding: 24px 10vw;
+    scroll-margin-top: 60px;
+  }
+
+  #lista-produtos {
+    display: grid; /* ADICIONA ISSO */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .link-produto {
+    width: 100%;
+  }
 
   .preco-riscado-produto {
     font-size: 0.8rem;
@@ -594,21 +613,6 @@ footer {
 
   .preco-parcelado-produto {
     font-size: 1rem;
-  }
-
-  #destaques {
-    padding: 24px 10vw;
-    scroll-margin-top: 60px;
-  }
-
-  .grid-destaques {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-
-  .link-produto {
-    width: 100%;
   }
 
   /*CATEGORIAS - 1024PX*/

@@ -27,7 +27,9 @@
           <li><a href="#categorias" onclick="fecharMenu()">Categorias</a></li>
           <li><a href="#sobre" onclick="fecharMenu()">Sobre Nós</a></li>
           <li><a href="#contato" onclick="fecharMenu()">Contato</a></li>
-          <li><a href="htmls/produtos.html" onclick="fecharMenu()">Catálogo</a></li>
+          <li>
+            <a href="htmls/produtos.html" onclick="fecharMenu()">Catálogo</a>
+          </li>
         </ul>
       </nav>
       <div class="overlay-menu" onclick="fecharMenu()"></div>
@@ -70,188 +72,8 @@
     <section id="destaques" class="section-destaques">
       <h2 id="tit-destaques" class="titulo-secao">Nossos Destaques</h2>
       <div class="grid-destaques">
-        <a href="#" class="link-produto">
-          <div class="card-produto">
-            <img
-              src="imagens/imagens-itens/anel-ouro1.png"
-              alt="Anel de Ouro"
-              class="imagem-produto"
-            />
-            <div class="box-desc-produto">
-              <p class="descricao-produto">
-                Um anel elegante feito de ouro 18 quilates, perfeito para
-                qualquer ocasião.
-              </p>
-              <div class="precos-do-item">
-                <span class="preco-riscado-produto">R$ 1.650,00</span>
-                <span class="preco-produto">R$ 1.200,00</span>
-                <span class="preco-parcelado-produto"
-                  >4x sem juros de R$ 300,00</span
-                >
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="link-produto">
-          <div class="card-produto">
-            <img
-              src="imagens/imagens-itens/colar-prata-pg-coracao.png"
-              alt="Colar de Prata"
-              class="imagem-produto"
-            />
-            <div class="box-desc-produto">
-              <p class="descricao-produto">
-                Colar delicado em prata 925 com pingente de coração, ideal para
-                presentear quem você ama.
-              </p>
-              <div class="precos-do-item">
-                <span class="preco-riscado-produto">R$ 890,00</span>
-                <span class="preco-produto">R$ 650,00</span>
-                <span class="preco-parcelado-produto"
-                  >3x sem juros de R$ 216,67</span
-                >
-              </div>
-            </div>
-          </div>
-        </a>
+        <div id="lista-produtos"></div>
 
-        <a href="#" class="link-produto">
-          <div class="card-produto">
-            <img
-              src="imagens/imagens-itens/par-brinco-ourobranco-diamante.png"
-              alt="Brinco de Diamante"
-              class="imagem-produto"
-            />
-            <div class="box-desc-produto">
-              <p class="descricao-produto">
-                Par de brincos solitários em ouro branco com diamantes naturais
-                de alta qualidade.
-              </p>
-              <div class="precos-do-item">
-                <span class="preco-riscado-produto">R$ 3.200,00</span>
-                <span class="preco-produto">R$ 2.400,00</span>
-                <span class="preco-parcelado-produto"
-                  >6x sem juros de R$ 400,00</span
-                >
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="link-produto">
-          <div class="card-produto">
-            <img
-              src="imagens/imagens-itens/pulseira-charm-prata-berloques.png"
-              alt="Pulseira Charm"
-              class="imagem-produto"
-            />
-            <div class="box-desc-produto">
-              <p class="descricao-produto">
-                Pulseira estilo charm em prata com berloques personalizáveis,
-                perfeita para criar sua história.
-              </p>
-              <div class="precos-do-item">
-                <span class="preco-riscado-produto">R$ 750,00</span>
-                <span class="preco-produto">R$ 550,00</span>
-                <span class="preco-parcelado-produto"
-                  >3x sem juros de R$ 183,33</span
-                >
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="link-produto">
-          <div class="card-produto">
-            <img
-              src="imagens/imagens-itens/aliancas-tungstenio.png"
-              alt="Aliança de Tungstênio"
-              class="imagem-produto"
-            />
-            <div class="box-desc-produto">
-              <p class="descricao-produto">
-                Aliança moderna em tungstênio com detalhes em carbono,
-                resistente e sofisticada.
-              </p>
-              <div class="precos-do-item">
-                <span class="preco-riscado-produto">R$ 480,00</span>
-                <span class="preco-produto">R$ 320,00</span>
-                <span class="preco-parcelado-produto"
-                  >2x sem juros de R$ 160,00</span
-                >
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="link-produto">
-          <div class="card-produto">
-            <img
-              src="imagens/imagens-itens/tornozeleira-folheada.png"
-              alt="Tornozeleira Folheada"
-              class="imagem-produto"
-            />
-            <div class="box-desc-produto">
-              <p class="descricao-produto">
-                Tornozeleira delicada folheada a ouro com pingentes de estrela,
-                perfeita para o verão.
-              </p>
-              <div class="precos-do-item">
-                <span class="preco-riscado-produto">R$ 280,00</span>
-                <span class="preco-produto">R$ 180,00</span>
-                <span class="preco-parcelado-produto"
-                  >2x sem juros de R$ 90,00</span
-                >
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="link-produto">
-          <div class="card-produto">
-            <img
-              src="imagens/imagens-itens/anel-de-formatura.png"
-              alt="Anel de Formatura"
-              class="imagem-produto"
-            />
-            <div class="box-desc-produto">
-              <p class="descricao-produto">
-                Anel de formatura personalizado em ouro com pedra natural,
-                símbolo de conquista e dedicação.
-              </p>
-              <div class="precos-do-item">
-                <span class="preco-riscado-produto">R$ 2.800,00</span>
-                <span class="preco-produto">R$ 2.100,00</span>
-                <span class="preco-parcelado-produto"
-                  >5x sem juros de R$ 420,00</span
-                >
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="#" class="link-produto">
-          <div class="card-produto">
-            <img
-              src="imagens/imagens-itens/pingente-cruz-ouro.png"
-              alt="Pingente Cruz"
-              class="imagem-produto"
-            />
-            <div class="box-desc-produto">
-              <p class="descricao-produto">
-                Pingente de cruz em ouro amarelo com detalhes trabalhados,
-                símbolo de fé e proteção.
-              </p>
-              <div class="precos-do-item">
-                <span class="preco-riscado-produto">R$ 1.100,00</span>
-                <span class="preco-produto">R$ 850,00</span>
-                <span class="preco-parcelado-produto"
-                  >4x sem juros de R$ 212,50</span
-                >
-              </div>
-            </div>
-          </div>
-        </a>
       </div>
       <a href="htmls/produtos.html" class="btn-ver-catalogo">Ver Todos →</a>
     </section>
@@ -318,9 +140,10 @@
             A <strong>Joalheria Lumière</strong> é uma marca tradicional com 18
             anos de atuação no mercado de joias finas. Localizada no centro da
             cidade, a empresa trabalha com peças em ouro 18k, prata 925,
-            semijoias de alto padrão e alianças personalizadas.
-            <br><br>
-            Ao longo de quase duas décadas, construímos uma relação de confiança com nossos clientes, oferecendo peças cuidadosamente selecionadas e experiências que tornam cada momento ainda mais especial. 
+            semijoias de alto padrão e alianças personalizadas. <br /><br />
+            Ao longo de quase duas décadas, construímos uma relação de confiança
+            com nossos clientes, oferecendo peças cuidadosamente selecionadas e
+            experiências que tornam cada momento ainda mais especial.
           </p>
         </div>
       </div>
@@ -384,7 +207,10 @@
       </div>
 
       <div class="copy-final">
-        <p>Desenvolvido por <a href="https://www.instagram.com/clarti.dev/">ClarTI</a></p>
+        <p>
+          Desenvolvido por
+          <a href="https://www.instagram.com/clarti.dev/">ClarTI</a>
+        </p>
         <p>&copy; 2025 Joalheria Lumière. Todos os direitos reservados.</p>
       </div>
     </footer>

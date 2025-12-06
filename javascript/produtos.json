@@ -6,7 +6,8 @@
     "imagem": "../imagens/imagens-itens/anel-ouro1.png",
     "preco": "R$ 1.200,00",
     "precoRiscado": "R$ 1.650,00",
-    "precoParcelado": "4x sem juros de R$ 300,00"
+    "precoParcelado": "4x sem juros de R$ 300,00",
+    "material": "Ouro 18k"
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "imagem": "../imagens/imagens-itens/colar-prata-pg-coracao.png",
     "preco": "R$ 650,00",
     "precoRiscado": "R$ 890,00",
-    "precoParcelado": "3x sem juros de R$ 216,67"
+    "precoParcelado": "3x sem juros de R$ 216,67",
+    "material": "Prata 925"
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "imagem": "../imagens/imagens-itens/par-brinco-ourobranco-diamante.png",
     "preco": "R$ 2.400,00",
     "precoRiscado": "R$ 3.200,00",
-    "precoParcelado": "6x sem juros de R$ 400,00"
+    "precoParcelado": "6x sem juros de R$ 400,00",
+    "material": "Ouro branco e diamante natural"
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "imagem": "../imagens/imagens-itens/pulseira-charm-prata-berloques.png",
     "preco": "R$ 550,00",
     "precoRiscado": "R$ 750,00",
-    "precoParcelado": "3x sem juros de R$ 183,33"
+    "precoParcelado": "3x sem juros de R$ 183,33",
+    "material": "Prata 925"
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "imagem": "../imagens/imagens-itens/aliancas-tungstenio.png",
     "preco": "R$ 320,00",
     "precoRiscado": "R$ 480,00",
-    "precoParcelado": "2x sem juros de R$ 160,00"
+    "precoParcelado": "2x sem juros de R$ 160,00",
+    "material": "Tungstênio e fibra de carbono"
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "imagem": "../imagens/imagens-itens/tornozeleira-folheada.png",
     "preco": "R$ 180,00",
     "precoRiscado": "R$ 280,00",
-    "precoParcelado": "2x sem juros de R$ 90,00"
+    "precoParcelado": "2x sem juros de R$ 90,00",
+    "material": "Metal folheado a ouro"
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "imagem": "../imagens/imagens-itens/anel-de-formatura.png",
     "preco": "R$ 2.100,00",
     "precoRiscado": "R$ 2.800,00",
-    "precoParcelado": "5x sem juros de R$ 420,00"
+    "precoParcelado": "5x sem juros de R$ 420,00",
+    "material": "Ouro e pedra natural"
   },
   {
     "id": 8,
@@ -69,6 +76,7 @@
     "imagem": "../imagens/imagens-itens/pingente-cruz-ouro.png",
     "preco": "R$ 850,00",
     "precoRiscado": "R$ 1.100,00",
-    "precoParcelado": "4x sem juros de R$ 212,50"
+    "precoParcelado": "4x sem juros de R$ 212,50",
+    "material": "Ouro 18k"
   }
 ]
