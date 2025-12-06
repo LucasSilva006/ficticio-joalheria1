@@ -1,6 +1,7 @@
 .section-destaques {
-    background-color: white;
-    padding: 24px 24px;
+    background-color: rgb(247, 247, 247);
+    padding: 24px 10vw;
+    text-align: center;
 }
 
 .titulo-secao {
@@ -12,21 +13,17 @@
     justify-content: center;
     align-items: center;
     gap: 12px;
-    margin: 24px 0 32px 0;
+    margin: 8px 0 24px 0;
 }
 
 .filtro-categorias-container label {
-    font-weight: bold;
     color: black;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
 }
 
 #filtro-categoria {
     padding: 8px 20px;
-    border-radius: 8px;
     border: 1px solid black;
-    background: #cccccc;
+    background: #f0f0f0;
     color: black;
     font-size: 1rem;
     font-family: inherit;

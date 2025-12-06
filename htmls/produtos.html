@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Produtos | Joalheria Lumière</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style2.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style2.css" />
+  </head>
+  <body>
     <header>
       <button class="btn-menu" onclick="mostrarMenu()">
         <img src="../imagens/icons/icon-menu.png" alt="Menu" width="30" />
       </button>
       <nav class="menu-sidebar">
         <button class="btn-fechar-menu" onclick="fecharMenu()">
-          <img src="../imagens/icons/icon-seta-esquerda.png" alt="Voltar" width="30" />
+          <img
+            src="../imagens/icons/icon-seta-esquerda.png"
+            alt="Voltar"
+            width="30"
+          />
         </button>
         <ul>
-          <li><a href="../index.html#inicio" onclick="fecharMenu()">Início</a></li>
-          <li><a href="../index.html#destaques" onclick="fecharMenu()">Nossos Destaques</a></li>
-          <li><a href="../index.html#categorias" onclick="fecharMenu()">Categorias</a></li>
-          <li><a href="../index.html#sobre" onclick="fecharMenu()">Sobre Nós</a></li>
-          <li><a href="../index.html#contato" onclick="fecharMenu()">Contato</a></li>
+          <li>
+            <a href="../index.html#inicio" onclick="fecharMenu()">Início</a>
+          </li>
+          <li>
+            <a href="../index.html#destaques" onclick="fecharMenu()"
+              >Nossos Destaques</a
+            >
+          </li>
+          <li>
+            <a href="../index.html#categorias" onclick="fecharMenu()"
+              >Categorias</a
+            >
+          </li>
+          <li>
+            <a href="../index.html#sobre" onclick="fecharMenu()">Sobre Nós</a>
+          </li>
+          <li>
+            <a href="../index.html#contato" onclick="fecharMenu()">Contato</a>
+          </li>
         </ul>
       </nav>
       <div class="overlay-menu" onclick="fecharMenu()"></div>
@@ -29,15 +47,30 @@
         <img src="../imagens/icons/icon-diamante.png" alt="Logo" width="30" />
         <h1 class="nome-da-empresa">Joalheria Lumière</h1>
       </div>
-      <img src="../imagens/icons/icon-sacola-de-compra.png" alt="Sacola" width="30" />
+      <img
+        src="../imagens/icons/icon-sacola-de-compra.png"
+        alt="Sacola"
+        width="30"
+      />
     </header>
 
     <main>
       <section id="produtos" class="section-destaques">
         <h2 class="titulo-secao">Todos os Produtos</h2>
         <div class="filtro-categorias-container">
-          <label for="filtro-categoria" style="font-weight: bold; margin-right: 8px;">Filtrar por categoria:</label>
-          <select id="filtro-categoria" style="padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc;">
+          <label
+            for="filtro-categoria"
+            style="font-weight: bold; margin-right: 8px"
+            >Filtrar por categoria:</label
+          >
+          <select
+            id="filtro-categoria"
+            style="
+              padding: 8px 16px;
+              border-radius: 8px;
+              border: 1px solid #ccc;
+            "
+          >
             <option value="todos">Todos</option>
             <option value="Anel">Anéis</option>
             <option value="Colar">Colares</option>
@@ -85,19 +118,25 @@
     <script>
       // Menu lateral
       function mostrarMenu() {
-        document.querySelector('.menu-sidebar').classList.add('menu-aberto');
-        document.querySelector('.overlay-menu').classList.add('overlay-visivel');
+        document.querySelector(".menu-sidebar").classList.add("menu-aberto");
+        document
+          .querySelector(".overlay-menu")
+          .classList.add("overlay-visivel");
       }
       function fecharMenu() {
-        document.querySelector('.menu-sidebar').classList.remove('menu-aberto');
-        document.querySelector('.overlay-menu').classList.remove('overlay-visivel');
+        document.querySelector(".menu-sidebar").classList.remove("menu-aberto");
+        document
+          .querySelector(".overlay-menu")
+          .classList.remove("overlay-visivel");
       }
       // Renderizar produtos do JSON com filtro
       let todosProdutos = [];
       function renderProdutos(produtos) {
-        const container = document.getElementById('produtos-list');
-        container.innerHTML = produtos.map(prod => `
-          <a href="#" class="link-produto">
+        const container = document.getElementById("produtos-list");
+        container.innerHTML = produtos
+          .map(
+            (prod) => `
+          <a href="./produto.html?id=${prod.id}" class="link-produto">
             <div class="card-produto">
               <img src="${prod.imagem}" alt="${prod.nome}" class="imagem-produto" />
               <div class="box-desc-produto">
@@ -110,26 +149,30 @@
               </div>
             </div>
           </a>
-        `).join('');
+        `
+          )
+          .join("");
       }
-      fetch('produtos.json')
-        .then(res => res.json())
-        .then(produtos => {
+      fetch("../javascript/produtos.json")
+        .then((res) => res.json())
+        .then((produtos) => {
           todosProdutos = produtos;
           renderProdutos(produtos);
         });
-      document.getElementById('filtro-categoria').addEventListener('change', function() {
-        const valor = this.value;
-        if (valor === 'todos') {
-          renderProdutos(todosProdutos);
-        } else {
-          const filtrados = todosProdutos.filter(prod => {
-            // Busca por nome que começa com a categoria
-            return prod.nome.toLowerCase().includes(valor.toLowerCase());
-          });
-          renderProdutos(filtrados);
-        }
-      });
+      document
+        .getElementById("filtro-categoria")
+        .addEventListener("change", function () {
+          const valor = this.value;
+          if (valor === "todos") {
+            renderProdutos(todosProdutos);
+          } else {
+            const filtrados = todosProdutos.filter((prod) => {
+              // Busca por nome que começa com a categoria
+              return prod.nome.toLowerCase().includes(valor.toLowerCase());
+            });
+            renderProdutos(filtrados);
+          }
+        });
     </script>
-</body>
+  </body>
 </html>
