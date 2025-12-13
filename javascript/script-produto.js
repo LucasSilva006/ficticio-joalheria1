@@ -1,22 +1,22 @@
 function getIdFromUrl() {
-        const params = new URLSearchParams(window.location.search);
-        return params.get("id");
-      }
-      function whatsappButton(produto) {
-        const msg = encodeURIComponent(
-          `Olá! Tenho interesse no produto "${produto.nome}".`
-        );
-        return `<a class="btn-whatsapp" href="https://wa.me/5511123456789?text=${msg}" target="_blank">Fale pelo WhatsApp</a>`;
-      }
-      function montarProduto(produto) {
-        return `
+  const params = new URLSearchParams(window.location.search);
+  return params.get("id");
+}
+function whatsappButton(produto) {
+  const msg = encodeURIComponent(
+    `Olá! Tenho interesse no produto "${produto.nome}".`
+  );
+  return `<a class="btn-whatsapp" href="https://wa.me/5511123456789?text=${msg}" target="_blank">Fale pelo WhatsApp</a>`;
+}
+function montarProduto(produto) {
+  return `
         <div class="produto-box">
           <img src="${produto.imagem}" alt="${
-          produto.nome
-        }" class="produto-img">
+    produto.nome
+  }" class="produto-img">
           <div class="produto-info">
             <h2 class="produto-nome">${produto.nome}</h2>
-            <span class="produto-preco">R$ ${produto.preco}</span>
+            <span class="produto-preco">${produto.preco}</span>
             <p class="produto-descricao">${produto.descricao}</p>
             <p class="produto-material"><strong>Material:</strong> ${
               produto.material
@@ -25,48 +25,52 @@ function getIdFromUrl() {
           </div>
         </div>
       `;
-      }
-      function montarRelacionados(produtos, idAtual) {
-        const outros = produtos.filter((p) => String(p.id) !== String(idAtual));
-        const embaralhados = outros.sort(() => Math.random() - 0.5).slice(0, 4);
-        return embaralhados
-          .map(
-            (prod) => `
+}
+function montarRelacionados(produtos, idAtual) {
+  const outros = produtos.filter((p) => String(p.id) !== String(idAtual));
+  const embaralhados = outros.sort(() => Math.random() - 0.5).slice(0, 4);
+  return embaralhados
+    .map(
+      (prod) => `
         <a href="produto.html?id=${prod.id}" class="relacionado-card">
           <img src="${prod.imagem}" alt="${prod.nome}">
           <span>${prod.nome}</span>
-          <span class="relacionado-preco">R$ ${prod.preco}</span>
+          <span class="relacionado-preco">${prod.preco}</span>
         </a>
       `
-          )
-          .join("");
-      }
-      const id = getIdFromUrl();
-      fetch("../javascript/produtos.json")
-        .then((res) => res.json())
-        .then((produtos) => {
-          const produto = produtos.find((p) => String(p.id) === String(id));
-          const detalhe = document.getElementById("produto-detalhe");
-          if (produto) {
-            detalhe.innerHTML = montarProduto(produto);
-            document.querySelector(".relacionados-grid").innerHTML =
-              montarRelacionados(produtos, produto.id);
-          } else {
-            detalhe.innerHTML = `<div class="produto-nao-encontrado">Produto não encontrado.</div>`;
-            document.querySelector(".relacionados-grid").innerHTML = "";
-          }
-        })
-        .catch(() => {
-          document.getElementById("produto-detalhe").innerHTML =
-            '<div class="produto-nao-encontrado">Erro ao carregar produtos.</div>';
-        });
+    )
+    .join("");
+}
+const id = getIdFromUrl();
+fetch("../javascript/produtos.json")
+  .then((res) => res.json())
+  .then((produtos) => {
+    const produto = produtos.find((p) => String(p.id) === String(id));
+    const detalhe = document.getElementById("produto-detalhe");
+    if (produto) {
+      detalhe.innerHTML = montarProduto(produto);
+      document.querySelector(".relacionados-grid").innerHTML =
+        montarRelacionados(produtos, produto.id);
+    } else {
+      detalhe.innerHTML = `<div class="produto-nao-encontrado">Produto não encontrado.</div>`;
+      document.querySelector(".relacionados-grid").innerHTML = "";
+    }
+  })
+  .catch(() => {
+    document.getElementById("produto-detalhe").innerHTML =
+      '<div class="produto-nao-encontrado">Erro ao carregar produtos.</div>';
+  });
 
-      function mostrarMenu() {
-        document.querySelector(".menu-sidebar").classList.add("aberto");
-        document.querySelector(".overlay-menu").classList.add("mostrar");
-      }
+function mostrarMenu() {
+  const navMenu = document.querySelector(".menu-sidebar");
+  const overlay = document.querySelector(".overlay-menu");
+  navMenu.classList.add("menu-aberto");
+  overlay.classList.add("overlay-visivel");
+}
 
-      function fecharMenu() {
-        document.querySelector(".menu-sidebar").classList.remove("aberto");
-        document.querySelector(".overlay-menu").classList.remove("mostrar");
-      }
+function fecharMenu() {
+  const navMenu = document.querySelector(".menu-sidebar");
+  const overlay = document.querySelector(".overlay-menu");
+  navMenu.classList.remove("menu-aberto");
+  overlay.classList.remove("overlay-visivel");
+}
